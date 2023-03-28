@@ -23,6 +23,7 @@ const getWeather = () => {
 		temperature.textContent = temp.toFixed() + '℃';
 		humidity.textContent = huma + '%';
 		weather.textContent = status.main;
+        input.value = "";
 	});
 };
 
