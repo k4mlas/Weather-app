@@ -11,11 +11,12 @@ const API_LINK = 'https://api.openweathermap.org/data/2.5/weather?q=';
 const API_KEY = '&appid=c48b035fd93d6404c86ddd9070a9ead2';
 const API_UNITS = '&units=metric';
 
+
 const getWeather = () => {
 	const city = input.value || 'London';
 	const URL = API_LINK + city + API_KEY + API_UNITS;
+	
 	axios.get(URL).then((res) => {
-		
 		const temp = res.data.main.temp;
 		const huma = res.data.main.humidity;
 		const status = Object.assign({}, ...res.data.weather);
@@ -23,8 +24,12 @@ const getWeather = () => {
 		temperature.textContent = temp.toFixed() + '℃';
 		humidity.textContent = huma + '%';
 		weather.textContent = status.main;
-        input.value = "";
+		input.value = '';
+		const icon = res.status;
+		console.log(icon);
 	});
 };
+
+photo.setAttribute('src', './img/ice.png');
 
 button.addEventListener('click', getWeather);
