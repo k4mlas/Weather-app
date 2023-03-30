@@ -28,25 +28,26 @@ const getWeather = () => {
 			input.value = '';
 			warning.textContent = '';
 			const icon = status.id;
-			if (icon == 200 && icon <= 232) {
+			console.log(icon);
+			if (icon > 200 && icon < 300) {
 				photo.setAttribute('src', './img/thunderstorm.png');
-			} else if (icon == 300 && icon <= 321) {
+			} else if (icon > 300 && icon < 400) {
 				photo.setAttribute('src', './img/drizzle.png');
-			} else if (icon == 500 && icon <= 531) {
+			} else if (icon > 500 && icon < 600) {
 				photo.setAttribute('src', './img/rain.png');
-			} else if (icon == 600 && icon <= 622) {
+			} else if (icon > 600 && icon < 700) {
 				photo.setAttribute('src', './img/ice.png');
-			} else if (icon == 701 && icon <= 781) {
+			} else if (icon >700 && icon < 800) {
 				photo.setAttribute('src', './img/fog.png');
-			} else if (icon == 800) {
+			} else if (icon === 800) {
 				photo.setAttribute('src', './img/sun.png');
-			} else if (icon == 801 && icon <= 804) {
+			} else if (icon >= 801 && icon < 900) {
 				photo.setAttribute('src', './img/cloud.png');
 			} else {
 				photo.setAttribute('src', './img/unknown.png');
 			}
 		})
-		.catch((warning.textContent = 'Wpisz poprawną nazwę miasta'));
+		// .catch((warning.textContent = 'Wpisz poprawną nazwę miasta'));
 };
 
 const enterCheck = (e) => {
